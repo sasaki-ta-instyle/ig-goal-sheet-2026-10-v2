@@ -12,7 +12,7 @@ ConoHa VPS 上で本番運用する。本番反映は **「本番にあげて」
 |---|---|
 | CATEGORY | `app` |
 | APP_NAME | `ig-goal-sheet-2026-10-v2` |
-| PORT | `3012` |
+| PORT | `3015` |
 | 公開URL | `https://app.instyle.group/ig-goal-sheet-2026-10-v2/` |
 | HEALTHCHECK_PATH | `/ig-goal-sheet-2026-10-v2/`（ルート判定。`/api/health` は未実装） |
 | USE_DB | `false` |
@@ -80,15 +80,15 @@ pm2 reload app-ig-goal-sheet-2026-10-v2 --update-env
     ```nginx
     location = /ig-goal-sheet-2026-10-v2 {
       include snippets/proxy-next.conf;
-      proxy_pass http://127.0.0.1:3012;
+      proxy_pass http://127.0.0.1:3015;
     }
     location ^~ /ig-goal-sheet-2026-10-v2/ {
       include snippets/proxy-next.conf;
-      proxy_pass http://127.0.0.1:3012;
+      proxy_pass http://127.0.0.1:3015;
     }
     ```
   - `nginx -t && systemctl reload nginx`
 - ConoHa ポート台帳（`~/Workspace/docs/conoha-port-registry.md`）に下記 active 行を追加:
   ```
-  | active | app | ig-goal-sheet-2026-10-v2 | 3012 | app-ig-goal-sheet-2026-10-v2 | sasaki-ta-instyle/ig-goal-sheet-2026-10-v2 | https://app.instyle.group/ig-goal-sheet-2026-10-v2/ | /ig-goal-sheet-2026-10-v2/ | false | 2026-10-27 | 下期版の調整・アップデート検証用並走版。本番の ig-goal-sheet-2026-10 と並走 |
+  | active | app | ig-goal-sheet-2026-10-v2 | 3015 | app-ig-goal-sheet-2026-10-v2 | sasaki-ta-instyle/ig-goal-sheet-2026-10-v2 | https://app.instyle.group/ig-goal-sheet-2026-10-v2/ | /ig-goal-sheet-2026-10-v2/ | false | 2026-10-27 | 下期版の調整・アップデート検証用並走版。本番の ig-goal-sheet-2026-10 と並走 |
   ```

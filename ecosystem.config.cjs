@@ -33,7 +33,7 @@ module.exports = {
         ...envBase,
         ...envApp,
         NODE_ENV: "production",
-        PORT: "3012",
+        PORT: "3015",
         HOSTNAME: "127.0.0.1",
       },
     },
