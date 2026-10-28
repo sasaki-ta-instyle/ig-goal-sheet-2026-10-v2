@@ -282,8 +282,8 @@ function PersonalSlSupervisorPage({ data, ownerUrlPill }: { data: FormData; owne
   return (
     <section className="pdf-page">
       {ownerUrlPill}
-      <h2 className="pdf-page-title">03｜個人目標 — SL 理論 &amp; 上長コメント</h2>
-      <p className="pdf-page-lede">期中の関わり方の握りと、上長から西村さんへ。</p>
+      <h2 className="pdf-page-title">03｜個人目標 — SL 理論・ハッピーエンド・上長コメント</h2>
+      <p className="pdf-page-lede">期中の関わり方の握りと、中長期ゴール、そして上長から西村さんへ。</p>
       <div className="pdf-grid-2">
         <div className="pdf-card">
           <p className="pdf-card-heading">SL 理論（今期の関わり方）</p>
@@ -301,6 +301,17 @@ function PersonalSlSupervisorPage({ data, ownerUrlPill }: { data: FormData; owne
               {p.supervisorComment.trim() || '（未記入）'}
             </p>
           </div>
+        </div>
+      </div>
+      <div className="pdf-card" style={{ marginTop: 16 }}>
+        <p className="pdf-card-heading">あなたが考えるハッピーエンド（中長期ゴール）</p>
+        <div className="pdf-card-body">
+          <p style={{ fontSize: '.6875rem', color: 'var(--color-text-muted)', marginBottom: 8 }}>
+            半期ごとに「労働分配率と比べてどうか」「会社目標とリンクしているか」を確認する欄。
+          </p>
+          <p style={{ fontSize: '.8125rem', lineHeight: 1.75, whiteSpace: 'pre-wrap' }}>
+            {textOrDash(p.happyEnding)}
+          </p>
         </div>
       </div>
       <div className="pdf-page-footer">

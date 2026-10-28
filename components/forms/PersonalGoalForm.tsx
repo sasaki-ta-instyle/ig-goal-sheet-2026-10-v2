@@ -316,7 +316,19 @@ export default function PersonalGoalForm({ data, onChange }: Props) {
         onChange={e => set('slNote', e.target.value)}
       />
 
-      <p style={{ fontSize: '.8125rem', fontWeight: 600, marginBottom: 6 }}>④ 上長から西村さんへ</p>
+      <p style={{ fontSize: '.8125rem', fontWeight: 600, marginBottom: 6 }}>④ あなたが考えるハッピーエンド</p>
+      <p style={{ fontSize: '.75rem', color: 'var(--color-text-muted)', marginBottom: 12, lineHeight: 1.7 }}>
+        個人の中長期ゴール（キャリア・年収・ライフ・成し遂げたい状態）を言葉にしてください。半期ごとに <strong>労働分配率と比べてどうか</strong>・<strong>会社目標とリンクしているか</strong> の 2 軸で確認します。今の時点での素直な絵姿で構いません。
+      </p>
+      <textarea
+        className="input"
+        style={{ width: '100%', minHeight: 96, resize: 'vertical', padding: '8px 10px', fontSize: '.8125rem', marginBottom: 24 }}
+        placeholder="例：3 年後に〇〇の役割を担っていたい／年収 ◯◯ 万円／家族と△△ できる状態、など。会社目標とどこで重なるかも一緒に。"
+        value={data.happyEnding}
+        onChange={e => set('happyEnding', e.target.value)}
+      />
+
+      <p style={{ fontSize: '.8125rem', fontWeight: 600, marginBottom: 6 }}>⑤ 上長から西村さんへ</p>
       <p style={{ fontSize: '.75rem', color: 'var(--color-text-muted)', marginBottom: 12, lineHeight: 1.7 }}>
         ここは本人ではなく上長が記入します。シートが書き終わったらシェア用URLを上長に送ってください。
       </p>

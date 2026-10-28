@@ -205,14 +205,14 @@ function addPersonalSlSupervisorSlide(pres: PptxGenJS, data: FormData) {
   const slLabel: Record<string, string> = {
     S1: 'S1｜指示型', S2: 'S2｜コーチ型', S3: 'S3｜支援型', S4: 'S4｜委任型', '': '（未設定）',
   };
-  addSlideTitle(s, '03｜個人目標 — SL 理論 & 上長コメント', '期中の関わり方の握りと、上長から西村さんへ。');
+  addSlideTitle(s, '03｜個人目標 — SL 理論・ハッピーエンド・上長コメント', '期中の関わり方の握りと、中長期ゴール、そして上長から西村さんへ。');
 
   s.addText([
     { text: 'SL 理論（今期の関わり方）\n\n', options: { bold: true, fontSize: 12, color: COLOR_ACCENT } },
     { text: (slLabel[p.slLevel] ?? '（未設定）') + '\n\n', options: { bold: true, fontSize: 18, color: COLOR_TEXT } },
     { text: p.slNote || '（メモ未記入）', options: { fontSize: 12, color: COLOR_MUTED } },
   ], {
-    x: 0.5, y: 1.3, w: 6.0, h: 5.8,
+    x: 0.5, y: 1.3, w: 6.0, h: 3.6,
     fontFace: FONT, valign: 'top', lineSpacingMultiple: 1.4,
   });
 
@@ -220,8 +220,17 @@ function addPersonalSlSupervisorSlide(pres: PptxGenJS, data: FormData) {
     { text: '上長から西村さんへ\n\n', options: { bold: true, fontSize: 12, color: COLOR_MUTED } },
     { text: p.supervisorComment.trim() || '（未記入）', options: { fontSize: 14, color: COLOR_TEXT } },
   ], {
-    x: 6.7, y: 1.3, w: 6.1, h: 5.8,
+    x: 6.7, y: 1.3, w: 6.1, h: 3.6,
     fontFace: FONT, valign: 'top', lineSpacingMultiple: 1.5,
+  });
+
+  s.addText([
+    { text: 'あなたが考えるハッピーエンド（中長期ゴール）\n', options: { bold: true, fontSize: 12, color: COLOR_ACCENT } },
+    { text: '半期ごとに「労働分配率と比べてどうか」「会社目標とリンクしているか」を確認。\n\n', options: { fontSize: 10, color: COLOR_MUTED } },
+    { text: p.happyEnding.trim() || '（未記入）', options: { fontSize: 12, color: COLOR_TEXT } },
+  ], {
+    x: 0.5, y: 5.1, w: 12.3, h: 2.0,
+    fontFace: FONT, valign: 'top', lineSpacingMultiple: 1.4,
   });
 }
 

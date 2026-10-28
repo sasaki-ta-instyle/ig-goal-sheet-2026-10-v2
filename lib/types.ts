@@ -85,6 +85,7 @@ export interface PersonalGoalData {
   kpiContribs: KpiContribRow[];
   slLevel: SlLevel;
   slNote: string;
+  happyEnding: string;
   commitment: CommitmentRow[];
   supervisorComment: string;
 }
@@ -267,6 +268,7 @@ export function createDefaultFormData(): FormData {
       kpiContribs: Array(3).fill(null).map(() => ({ deptKpi: '', myPart: '' })),
       slLevel: '',
       slNote: '',
+      happyEnding: '',
       commitment: [
         { amount: '', rationale: '' },
         { amount: '', rationale: '' },
